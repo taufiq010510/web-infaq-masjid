@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jazākumullāhu Khairan — Masjid Al-Hikmah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: #f9fafb; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem 1.25rem; }
+    .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 3rem 2.5rem; max-width: 480px; width: 100%; text-align: center; box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
+    .icon { font-size: 52px; margin-bottom: 1.25rem; }
+    h1 { font-family: 'Playfair Display', serif; font-size: 26px; color: #085041; margin-bottom: 10px; }
+    .arab { font-size: 22px; color: #1D9E75; margin-bottom: 1rem; display: block; }
+    p { font-size: 14px; color: #6b7280; line-height: 1.7; margin-bottom: 1.5rem; }
+    .divider { height: 1px; background: #e5e7eb; margin: 1.5rem 0; }
+    .info-row { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 8px; }
+    .info-row span { color: #9ca3af; }
+    .info-row strong { color: #1a1a1a; }
+    .btn-back { display: inline-block; background: #1D9E75; color: #fff; padding: 12px 32px; border-radius: 99px; text-decoration: none; font-weight: 500; font-size: 14px; margin-top: 1rem; transition: background 0.15s; }
+    .btn-back:hover { background: #0F6E56; }
+    .wa-link { display: inline-flex; align-items: center; gap: 6px; color: #1D9E75; font-size: 13px; margin-top: 12px; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">🤲</div>
+    <span class="arab">جَزَاكُمُ اللَّهُ خَيْرًا</span>
+    <h1>Jazākumullāhu Khairan</h1>
+    <p>Infaq Anda telah kami terima. Semoga menjadi amal jariyah yang terus mengalir dan mendatangkan keberkahan untuk Anda dan keluarga.</p>
+    <div class="divider"></div>
+    <div class="info-row"><span>Nomor Order</span><strong id="order-id">—</strong></div>
+    <div class="info-row"><span>Status</span><strong style="color:#16a34a">✅ Berhasil / Diproses</strong></div>
+    <div class="divider"></div>
+    <p style="font-size:13px">Bukti pembayaran dikirim ke email Anda. Untuk konfirmasi lebih lanjut, hubungi admin kami via WhatsApp.</p>
+    <a href="https://wa.me/6281234567890" class="wa-link" id="wa-link">📱 Konfirmasi via WhatsApp</a>
+    <br/>
+    <a href="index.html" class="btn-back">← Kembali ke Beranda</a>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const orderId = params.get("order") || "—";
+    document.getElementById("order-id").textContent = orderId;
+    const waLink = document.getElementById("wa-link");
+    waLink.href = "https://wa.me/6281234567890?text=" + encodeURIComponent("Assalamualaikum, saya sudah berinfaq. Nomor order: " + orderId);
+  </script>
+</body>
+</html>
