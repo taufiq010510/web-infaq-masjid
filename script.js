@@ -23,7 +23,7 @@ document.querySelectorAll('input[name="program"]').forEach((radio) => {
 
 function updateSummary() {
   const programEl = document.querySelector('input[name="program"]:checked');
-  const program = programEl ? programEl.value : "Waqaf Tanah";
+  const program = programEl ? programEl.value : "Wakaf Tanah";
   document.getElementById("summary-program").textContent = program;
   const fmt = nominalDipilih > 0 ? "Rp " + nominalDipilih.toLocaleString("id-ID") : "Rp 0";
   document.getElementById("summary-nominal").textContent = fmt;
@@ -57,7 +57,7 @@ function prosesBayar() {
   if (!validasiForm()) return;
 
   const programEl = document.querySelector('input[name="program"]:checked');
-  const program = programEl ? programEl.value : "Waqaf Tanah";
+  const program = programEl ? programEl.value : "Wakaf Tanah";
   const namaRaw = document.getElementById("nama").value.trim();
   const anon = document.getElementById("anon").checked;
   const nama = anon ? "Anonim" : namaRaw;
