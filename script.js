@@ -23,7 +23,7 @@ document.querySelectorAll('input[name="program"]').forEach((radio) => {
 
 function updateSummary() {
   const programEl = document.querySelector('input[name="program"]:checked');
-  const program = programEl ? programEl.value : "Infaq Bebas";
+  const program = programEl ? programEl.value : "Waqaf Tanah";
   document.getElementById("summary-program").textContent = program;
   const fmt = nominalDipilih > 0 ? "Rp " + nominalDipilih.toLocaleString("id-ID") : "Rp 0";
   document.getElementById("summary-nominal").textContent = fmt;
@@ -57,7 +57,7 @@ function prosesBayar() {
   if (!validasiForm()) return;
 
   const programEl = document.querySelector('input[name="program"]:checked');
-  const program = programEl ? programEl.value : "Infaq Bebas";
+  const program = programEl ? programEl.value : "Waqaf Tanah";
   const namaRaw = document.getElementById("nama").value.trim();
   const anon = document.getElementById("anon").checked;
   const nama = anon ? "Anonim" : namaRaw;
@@ -71,5 +71,5 @@ function prosesBayar() {
 
   // Siapkan pesan WhatsApp
   const pesan = `Assalamualaikum, saya ${nama} ingin berinfaq.\nProgram: ${program}\nNominal: Rp ${fmt}\nNo. HP: ${telepon}`;
-  document.getElementById("wa-btn").href = "https://wa.me/6282217259165?text=" + encodeURIComponent(pesan);
+  document.getElementById("wa-btn").href = "https://wa.me/6282165878541?text=" + encodeURIComponent(pesan);
 }

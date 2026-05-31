@@ -14,7 +14,7 @@ exports.handler = async (event) => {
 
   try {
     const { nama, email, telepon, program, nominal } = JSON.parse(event.body);
-    const orderId = "INFAQ-" + Date.now();
+    const orderId = "waqaf-" + Date.now();
 
     const transactionData = {
       transaction_details: {
@@ -28,10 +28,10 @@ exports.handler = async (event) => {
       },
       item_details: [
         {
-          id: "infaq-001",
+          id: "waqaf-001",
           price: parseInt(nominal),
           quantity: 1,
-          name: program || "Infaq Masjid",
+          name: program || "Waqaf Tanah",
         },
       ],
       callbacks: {
